@@ -324,6 +324,88 @@
             line-height: 1.6;
         }
 
+        /* Team Page */
+        .team-section {
+            padding: 6rem 0;
+        }
+
+        .team-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .team-member {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            background: rgba(15, 15, 35, 0.5);
+            border: 1px solid rgba(99, 102, 241, 0.1);
+            border-radius: 24px;
+            padding: 2.5rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .team-member:hover {
+            transform: translateY(-4px);
+            border-color: rgba(99, 102, 241, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .team-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+            flex-shrink: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-photo::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+        }
+
+        .team-info {
+            flex: 1;
+        }
+
+        .team-role {
+            color: #6366f1;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-name {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #f8fafc;
+            margin-bottom: 1.5rem;
+        }
+
+        .team-description {
+            color: #94a3b8;
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
         /* History Page */
         .timeline {
             position: relative;
@@ -545,6 +627,18 @@
                 gap: 1.5rem;
             }
 
+            .team-member {
+                flex-direction: column;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .team-photo {
+                width: 150px;
+                height: 150px;
+                font-size: 3rem;
+            }
+
             .timeline::before {
                 left: 20px;
             }
@@ -601,6 +695,10 @@
         ::-webkit-scrollbar-thumb:hover {
             background: linear-gradient(to bottom, #5b64e6, #7c3aed);
         }
+
+        img {
+            border-radius: 20px;
+        }
     </style>
 </head>
 <body>
@@ -610,6 +708,7 @@
             <ul class="nav-links">
                 <li><a href="#" onclick="showPage('home')">Strona Główna</a></li>
                 <li><a href="#" onclick="showPage('movies')">Filmy</a></li>
+                <li><a href="#" onclick="showPage('team')">Kadra</a></li>
                 <li><a href="#" onclick="showPage('history')">Historia</a></li>
                 <li><a href="#" onclick="showPage('apply')">Aplikuj</a></li>
                 <li><a href="#" onclick="showPage('news')">Aktualności</a></li>
@@ -714,6 +813,65 @@
                                 <div><span>Rok:</span> 2022</div>
                             </div>
                             <p>Fascynujący portret lokalnej społeczności, jej tradycji i współczesnych wyzwań. Intymny dokument o ludziach i miejscu, które ich kształtuje.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Page -->
+        <div id="team" class="page">
+            <div class="container">
+                <div class="page-header">
+                    <h2>Nasza Kadra</h2>
+                    <p>Poznaj zespół profesjonalistów tworzących nasze filmy</p>
+                </div>
+                
+                <div class="team-section">
+                    <div class="team-grid">
+                        <div class="team-member">
+                            <div class="team-photo"><img src="emilStudio.jpg" alt="emil"></div>
+                            <div class="team-info">
+                                <div class="team-role">Reżyser / Montażysta / Aktor</div>
+                                <h3 class="team-name">Emil Woźniak</h3>
+                                <p class="team-description">Emil Woźniak od najmłodszych lat marzył o stworzeniu własnego studia filmowego. Po latach nauki i ciężkiej pracy ukończył Harvard University, zdobywając wiedzę i doświadczenie, które pomogły mu zrealizować ten cel. Dziś z dumą prowadzi swoje studio, a jego charyzma i wyjątkowa uroda sprawiają, że cieszy się ogromnym powodzeniem wśród kobiet, które nie kryją swojego zachwytu jego osobą.</p>
+                            </div>
+                        </div>
+
+                        <div class="team-member">
+                            <div class="team-photo"><img src="antekTest.jpg" alt="antek"></div>
+                            <div class="team-info">
+                                <div class="team-role">Aktor / Programista</div>
+                                <h3 class="team-name">Antoni Kiwer</h3>
+                                <p class="team-description">Doświadczony producent z 15-letnim stażem w branży. Odpowiada za koordynację wszystkich aspektów produkcji - od pre-produkcji po post-produkcję. Jego organizacyjne umiejętności i znajomość rynku filmowego są kluczowe dla sukcesu naszych projektów.</p>
+                            </div>
+                        </div>
+
+                        <div class="team-member">
+                            <div class="team-photo"><img src="damianStudio.jpg" alt="damian"></div>
+                            <div class="team-info">
+                                <div class="team-role">Aktor / Operator</div>
+                                <h3 class="team-name">Damian Koźmiński</h3>
+                                <p class="team-description">Uznany operator kamery z charakterystycznym, wizualnym stylem. Współpracował przy realizacji ponad 30 filmów fabularnych i dokumentalnych. Jego znajomość najnowszych technologii filmowych pozwala na tworzenie wyjątkowych obrazów kinowych.</p>
+                            </div>
+                        </div>
+
+                        <div class="team-member">
+                            <div class="team-photo"><img src="marcelStudio.jpg" alt="marcel"></div>
+                            <div class="team-info">
+                                <div class="team-role">Aktor / Dźwiękowiec</div>
+                                <h3 class="team-name">Marcel Szumiec</h3>
+                                <p class="team-description">Marcel Szumiec, porzucony w dzieciństwie w Anglii, został odnaleziony w zgniatarce na liście i cudem uratowany. Po latach przeniósł się do Polski, gdzie jako bezdomny nauczył się języka. W domu społecznym często oglądał filmy, które rozbudziły w nim pasję do aktorstwa. Jego talent został odkryty podczas ulicznego performance przez reżysera studia Psary, co odmieniło jego życie.</p>
+                            </div>
+                        </div>
+
+                        <div class="team-member">
+                            <div class="team-photo"><img src="kubaStudio.jpg" alt="kuba"></div>
+                            <div class="team-info">
+                                <div class="team-role">Kaskader / Aktor</div>
+                                <h3 class="team-name">Jakub Bijak</h3>
+                                <p class="team-description">Jakub Bijak to charyzmatyczny i przystojny chłopak, który pasjonuje się piłką nożną, grami komputerowymi oraz motoryzacją. Od zawsze marzył o byciu popularnym – marzenie to zaczyna się spełniać dzięki wsparciu jego pracodawcy, twórcy internetowych filmów, który dostrzegł w Jakubie naturalny talent do przyciągania uwagi. Z energią, uśmiechem i pewnością siebie Jakub zyskuje coraz większe grono fanów, łącząc swoje pasje z rosnącą rozpoznawalnością.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -933,6 +1091,7 @@
             const titles = {
                 'home': 'Studio Filmowe Psary',
                 'movies': 'Filmy - Studio Filmowe Psary',
+                'team': 'Kadra - Studio Filmowe Psary',
                 'history': 'Historia - Studio Filmowe Psary',
                 'apply': 'Aplikuj - Studio Filmowe Psary',
                 'news': 'Aktualności - Studio Filmowe Psary'
@@ -943,7 +1102,9 @@
             document.querySelectorAll('.nav-links a').forEach(link => {
                 link.classList.remove('active');
             });
-            event.target.classList.add('active');
+            if (event && event.target) {
+                event.target.classList.add('active');
+            }
         }
 
         // Enhanced movie player
@@ -1135,7 +1296,7 @@
             }, { threshold: 0.1 });
             
             // Observe elements for animation
-            document.querySelectorAll('.feature-card, .movie-card, .timeline-item, .news-item').forEach(el => {
+            document.querySelectorAll('.feature-card, .movie-card, .timeline-item, .news-item, .team-member').forEach(el => {
                 el.style.opacity = '0';
                 el.style.transform = 'translateY(20px)';
                 el.style.transition = 'opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
